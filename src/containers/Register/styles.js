@@ -4,6 +4,7 @@ import FundoForm from "../../assets/fundo-form.svg";
 import { Link as ReactLink } from "react-router-dom";
 
 
+
 export const Container = styled.div`
  display: flex;
  height: 100vh;
@@ -57,12 +58,8 @@ export const Title = styled.h2 `
  font-family: "Road Rage", sans-serif;
  font-weight: 400;
  font-size: 40px;
- color: #fff;
+ color: #9758a6;
 
- span{
-    color: #9758a6;
-    font-family: "Road Rage", sans-serif;
- }
 
 `;
 
@@ -85,7 +82,7 @@ input{
     width: 100%;
     border: none;
     border-radius: 5px;
-    height: 52px;
+    height: 40px;
     padding: 0 10px;
 }
 
@@ -107,6 +104,5 @@ export const Link = styled(ReactLink)`
 text-decoration: none;
 color: #fff;
 `;
-
 
 
