@@ -10,7 +10,7 @@ height: 480px;
 
 h1{
     font-family: "Road Rage", sans-serif;
-    font-size: 80px;
+    font-size: 100px;
     color: #f4f4f4;
     position: absolute;
     right: 20%;
@@ -25,7 +25,7 @@ background:linear-gradient(
     rgba(255,255,255,0.4)
 ),
 url('${FundoForm}');
-height: 500px;
+min-height: 100vh;
 `
 
 export const Content = styled.div`
