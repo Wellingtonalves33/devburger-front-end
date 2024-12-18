@@ -15,8 +15,8 @@ font-weight: 800;
 padding-bottom: 12px;
 position: relative;
 text-align: center;
-margin-bottom: 40px;
-margin-top: 10px;
+margin: 70px 0;
+
 
 
 &::after {

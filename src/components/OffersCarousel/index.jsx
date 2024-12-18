@@ -6,14 +6,17 @@ import {Container, ContainerItens, Title } from "./styles";
 
 
 export function OffersCarousel() {
-    const [categories, setCategories] = useState([])
+    const [offers, setOffers] = useState([]);
     
     useEffect(() => {
-        async function loadCategories() {
-            const {data} = await api.get("/categories")
-         setCategories(data)
+        async function loadProducts() {
+            const {data} = await api.get('/products')
+       
+            const onlyOffers = data.filter((product) => product.offer);
+
+            setOffers(onlyOffers);
         }
-        loadCategories();
+        loadProducts();
     }, []);
     const responsive = {
         superLargeDesktop: {
@@ -37,17 +40,17 @@ export function OffersCarousel() {
     return (
  
             <Container>
-              <Title>Categorias</Title>
+              <Title>Ofertas do Dia</Title>
               <Carousel
                 responsive={responsive}
                 infinite={true}
                 partialVisible={true} 
                 itemClass="carousel-item"
               >
-                {categories.map((category) => (
-                  <ContainerItens key={category.id} imageUrl={category.url}>
+                {offers.map((product) => (
+                  <ContainerItens key={product.id} imageUrl={product.url}>
                     
-                      <p>{category.name}</p>
+                      <p>{product.name}</p>
                   </ContainerItens>
                 ))}
               </Carousel>
