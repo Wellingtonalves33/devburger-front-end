@@ -28,6 +28,6 @@ url('${FundoForm}');
 min-height: 100vh;
 `
 
-export const Content = styled.div`
-padding-bottom: 70px;
-`
+// export const Content = styled.div`
+
+// `

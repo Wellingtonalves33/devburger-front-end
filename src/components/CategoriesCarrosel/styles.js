@@ -6,6 +6,14 @@ padding-left: 40px;
 .carousel-item {
     padding-right: 40px;
 }
+.react-multiple-carousel__arrow--left{
+    left: 16px; 
+    top: 10px;
+}
+.react-multiple-carousel__arrow--right{
+    right: 50px; 
+    top: 10px;
+}
 `
 
 export const Title = styled.h2`

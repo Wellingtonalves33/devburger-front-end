@@ -2,10 +2,25 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding-left: 40px;
+
 .carousel-item {
     padding-right: 40px;
 }
+.react-multi-carousel-list {
+    overflow: visible;
+}
+overflow-x: hidden;
+.react-multiple-carousel__arrow--left{
+    left: 16px; 
+    top: 10px;
+}
+.react-multiple-carousel__arrow--right{
+    right: 50px; 
+    top: 10px;
+}
+padding-bottom: 40px;
+padding-left: 40px;
+
 `
 
 export const Title = styled.h2`
@@ -33,25 +48,3 @@ margin: 70px 0;
 }
 `
 
-export const ContainerItens = styled.div`
-background: url('${(props) => props.imageUrl}');
-background-position: center;
-background-size: cover;
-display: flex;
-align-items: center;
-padding:20px 10px;
-width: 100%;
-height: 250px;
-border-radius: 20px;
-
-P{
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-size: 22.5px;
-    font-weight: bold;
-    margin-top: 150px;
-}
-
-`

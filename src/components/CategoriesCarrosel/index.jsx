@@ -30,7 +30,7 @@ export function CategoriesCarousel() {
         },
         mobile: {
           breakpoint: { max: 690, min: 0 },
-          items: 2
+          items: 1
         }
       };
 
