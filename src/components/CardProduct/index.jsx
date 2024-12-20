@@ -4,7 +4,7 @@ import { CartButton } from '../CartButton';
 
 // eslint-disable-next-line no-unused-vars
 export function CardProduct({product}) {
-    console.log(product);
+    console.log('Produto:', product);
     return (
         <Container>
             <CardImage src={product.url} alt={product.name}/>
