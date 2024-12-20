@@ -6,7 +6,7 @@ import {Container, ContainerItens, Title } from "./styles";
 
 
 export function CategoriesCarousel() {
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
     
     useEffect(() => {
         async function loadCategories() {
