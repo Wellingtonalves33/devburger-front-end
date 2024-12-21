@@ -1,17 +1,31 @@
 import { useEffect, useState } from "react";
-import { Container,Banner,CategoryMenu,ProductsContainer, CategoryButton } from "./styles";
+import { Container,Banner,CategoryMenu,ProductsContainer, CategoryButton, VoltaBtn } from "./styles";
 import { api } from "../../services/api";
 import { FormatPrice } from "../../utils/formatPrice";
 import { CardProduct } from "../../components/CardProduct";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Menu() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(0);
+ 
 
  const  navigate =  useNavigate();
+
+ const { search } = useLocation();
+
+ const queryParams = new URLSearchParams(search);
+
+ const [activeCategory, setActiveCategory] = useState(()=> {
+  const categoryId = +queryParams.get('categoria');
+
+  if (categoryId) {
+      return categoryId;
+  }
+
+  return 0;
+ });
 
 
         useEffect(() => {
@@ -64,6 +78,7 @@ export function Menu() {
                
             </Banner>
             <CategoryMenu>
+              <VoltaBtn onClick={() => navigate('/')}>volta</VoltaBtn>
                 {categories.map((category) =>(
                    <CategoryButton
                    key={category.id}

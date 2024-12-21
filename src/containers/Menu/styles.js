@@ -78,3 +78,15 @@ justify-content: center;
 max-width: 1280px;
 margin: 50px auto 0;
 `
+export const VoltaBtn = styled(Link)`
+text-decoration: none;
+cursor: pointer;
+background-color:#9758a6;
+color: #fff;
+padding: 7px 30px;
+font-size: 20px;
+font-weight: bold;
+line-height: 20px;
+border-bottom: 3px solid #9758a6;
+border-radius: 6px;
+`
