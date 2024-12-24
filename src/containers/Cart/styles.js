@@ -12,6 +12,7 @@ background:linear-gradient(
 ),
 url('${FundoForm}');
 min-height: 100vh;
+
 `;
 export const Banner = styled.div`
 background: url('${Texture}') no-repeat;
