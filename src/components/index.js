@@ -6,3 +6,6 @@ export * from './CategoriesCarrosel';
 export * from './Header';
 export * from './Footer';
 export * from './Table';
+export * from './CartResume'
+export * from './CartItems'
+export * from './Stripe/CheckoutForm'

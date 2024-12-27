@@ -32,6 +32,7 @@ button{
 export const EmptyCart = styled.p`
 font-size: 20px;
 text-align: center;
+font-weight: 700;
 
 `
 
