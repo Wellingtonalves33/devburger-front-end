@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Container = styled.div`
 width: 100%;
 min-height: 100vh;
-background-color: #f0f0f0;
+background-color: ${(props) => props.theme.secondWhite};
 
 background:linear-gradient(
     rgba(255,255,255,0.4),
@@ -27,21 +27,21 @@ position: relative;
 background: url('${FundoCard}') no-repeat;
 background-size: cover;
 background-position: center;
-background-color: #1f1f1f;
+background-color: ${(props) => props.theme.mainBlack};
 
 h1{
     font-family: "Road Rage", sans-serif;
     font-size: 100px;
     line-height: 65px;
     position: absolute;
-    color: #f4f4f4;
+    color: ${(props) => props.theme.darkWhite};
 
     right:20% ;
     top: 30%;
 
     span{
         display: block;
-        color: #f4f4f4;
+        color: ${(props) => props.theme.darkWhite};
         font-size: 20px;
         
     }
@@ -65,7 +65,7 @@ font-weight: 500;
 line-height: 20px;
 border-bottom: ${(props) => props.$isActiveCategory && '3px solid #9758a6' };
 &:hover{
-    color: #6f357c;
+    color: ${(props) => props.theme.secondDarkPurple};
 }
 `
 
@@ -81,12 +81,12 @@ margin: 50px auto 0;
 export const VoltaBtn = styled(Link)`
 text-decoration: none;
 cursor: pointer;
-background-color:#9758a6;
-color: #fff;
+background-color:${(props) => props.theme.purple};
+color: ${(props) => props.theme.white};
 padding: 7px 30px;
 font-size: 20px;
 font-weight: bold;
 line-height: 20px;
-border-bottom: 3px solid #9758a6;
+border-bottom: 3px solid ${(props) => props.theme.purple};
 border-radius: 6px;
 `

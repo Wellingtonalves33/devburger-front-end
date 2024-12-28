@@ -1,58 +1,58 @@
-import { createBrowserRouter } from "react-router-dom";
-
-import { Login, Cart, Home, Menu, Register} from "../containers";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Checkout } from "../containers/Checkout";
-import { CompletePayment } from "../containers/CompletePayment";
+import {  Route, Routes } from "react-router-dom";
+import { Login, Cart, Home, Menu, Register, CompletePayment, Checkout, Orders, NewProduct, EditProduct, Products} from "../containers";
+import { UserLayout } from "../layouts/UserLayout";
+import { AdminLayout } from "../layouts/AdminLayout";
 
 
-export const router = createBrowserRouter([
-   
-    {
-        path: "/",
-        element:(
-            <>
-            <Header />
-            <Home />
-            <Footer />
-            </>
-        ),
-    },
-    {
-        path: "/login",
-        element: <Login />,
-    },
-    {
-        path: "/cadastro",
-        element: <Register />,
-    },
-    {
-        path: "/cardapio",
-        element:(
-            <>
-            <Header />
-            <Menu />
-            <Footer />
-            </>
-        ),
+export function Router(){
+    return(
+        <Routes>
+            <Route path="/" element={<UserLayout/>}>  
+
+            <Route path="/cardapio" element={<Menu/>}/>
+            <Route path="/carrinho" element={<Cart/>}/>
+            <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="/complete" element={<CompletePayment/>}/>
+            <Route path="/" element={<Home/>}/>
+
+            </Route>
+
+            <Route path="/admin" element={<AdminLayout/>}>
+
+            <Route path="/admin/pedidos" element={<Orders/>}/>
+            <Route path="/admin/novo-produto" element={<NewProduct/>}/>
+            <Route path="/admin/editar-produto" element={<EditProduct/>}/>
+            <Route path="/admin/produtos" element={<Products/>}/>
+
+            </Route>
+
+
+
+
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/cadastro" element={<Register/>}/>
+
+        </Routes>
+    )
+}
+
+
+
+
+
+
+// 
+//     {
+//         path: "/checkout",
+//         element: <Checkout />,
+//     },
+//     {
+//         path: "/complete",
+//         element: <CompletePayment />,
+//     },
     
-    },
-    {
-        path: "/carrinho",
-        element: <Cart />,
-    },
-    {
-        path: "/checkout",
-        element: <Checkout />,
-    },
-    {
-        path: "/complete",
-        element: <CompletePayment />,
-    },
-    
-    {
-        path: "*",  // Isso captura todas as rotas não definidas
-        element: <div>Página não encontrada</div>, // Você pode criar um componente próprio para erro 404
-    }
-]);
+//     {
+//         path: "*",  // Isso captura todas as rotas não definidas
+//         element: <div>Página não encontrada</div>, // Você pode criar um componente próprio para erro 404
+//     }
+// ]);

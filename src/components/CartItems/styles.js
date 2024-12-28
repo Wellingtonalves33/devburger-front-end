@@ -17,13 +17,13 @@ button{
     justify-content: center;
     height: 32px;
     width: 32px;
-    color: #f0f0f0;
-    background-color:#9758a6;
+    color: ${(props) => props.theme.secondWhite};
+    background-color:${(props) => props.theme.purple};
     border-radius: 4px;
     border: none;
 
     &:hover{
-        background-color: #6f357c;
+        background-color: ${(props) => props.theme.secondDarkPurple};
     }
    
 }

@@ -1,0 +1,27 @@
+import { List, ListPlus, Receipt } from "@phosphor-icons/react";
+
+
+export const navLinks = [
+
+    {
+        id:1,
+        label:'pedidos',
+        path:'/admin/pedidos',
+        icon: <Receipt/>
+    },
+    {
+        id:2,
+        label:'Produtos',
+        path:'/admin/produtos',
+        icon: <List/>
+    },
+    {
+        id:3,
+        label:'Adicionar produto',
+        path:'/admin/novo-produto',
+        icon: <ListPlus/>
+    },
+
+
+
+]

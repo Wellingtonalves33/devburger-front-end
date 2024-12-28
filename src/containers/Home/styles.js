@@ -11,7 +11,7 @@ height: 480px;
 h1{
     font-family: "Road Rage", sans-serif;
     font-size: 100px;
-    color: #f4f4f4;
+    color: ${(props) => props.theme.darkWhite};
     position: absolute;
     right: 20%;
     top: 10%;

@@ -25,7 +25,7 @@ padding-left: 40px;
 
 export const Title = styled.h2`
 font-size: 32px;
-color: #61A120;
+color: ${(props) => props.theme.gren};
 font-weight: 800;
 padding-bottom: 12px;
 position: relative;
@@ -39,7 +39,7 @@ margin: 70px 0;
     position: absolute;
     width: 56px;
     height: 5px;
-    background-color: #61A120;
+    background-color: ${(props) => props.theme.gren};
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
