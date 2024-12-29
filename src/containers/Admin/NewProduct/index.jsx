@@ -6,12 +6,15 @@ import { Select, Container, Form, Input, InputGroup, Label, LabelUpload, SubmitB
 import { useEffect, useState } from "react"
 import { api } from "../../../services/api"
 import { toast } from "react-toastify"
+import { useNavigate } from "react-router-dom"
+import { ContainerCheckbox } from "../EditProduct/styles"
 
 const schema = yup
     .object({
         name: yup.string().required('Digite o nome do produto'),
         price: yup.number().positive().required('Digite o preço do produto'),
         category: yup.object().required('Selecione uma categoria'),
+        offer: yup.bool(),
         file: yup.mixed()
             .test('required', 'Escolha um arquivo para continuar', (value) => {
                 return value && value.length > 0
@@ -21,15 +24,16 @@ const schema = yup
             })
             .test('type', ' Apenas imagens PNG ou JPEG', (value) => {
                 return (
-                    value && 
-                    value.length > 0 && 
-                    (value[0].type === 'image/png' || value[0].type === 'image/jpeg' ));
+                    value &&
+                    value.length > 0 &&
+                    (value[0].type === 'image/png' || value[0].type === 'image/jpeg'));
             }),
     })
 
 export function NewProduct() {
     const [fileName, setFileName] = useState(null);
     const [category, setCategory] = useState([]);
+    const navigate = useNavigate()
 
     useEffect(() => {
         async function loadCategories() {
@@ -49,18 +53,23 @@ export function NewProduct() {
     });
 
     const onSubmit = async (data) => {
-       const productFormData = new FormData();
+        const productFormData = new FormData();
 
-       productFormData.append('name', data.name);
-       productFormData.append('price', data.price * 100);
-       productFormData.append('category_id', data.category.id);
-       productFormData.append('file', data.file[0]);
+        productFormData.append('name', data.name);
+        productFormData.append('price', data.price * 100);
+        productFormData.append('category_id', data.category.id);
+        productFormData.append('file', data.file[0]);
+        productFormData.append('offer', data.offer);
 
-       await toast.promise(api.post("/products", productFormData),{
-        pending: 'Cadastrando produto... ',
-        success: 'Produto cadastrado com sucesso',
-        error: 'Erro ao cadastrar produto, tente novamente'
-       }) 
+        await toast.promise(api.post("/products", productFormData), {
+            pending: 'Cadastrando produto... ',
+            success: 'Produto cadastrado com sucesso',
+            error: 'Erro ao cadastrar produto'
+
+        })
+        setTimeout(() => {
+            navigate('/admin/produtos')
+        }, 2000)
     }
 
 
@@ -112,6 +121,13 @@ export function NewProduct() {
                             />
                         )} />
                     <ErrorMessage>{errors?.category?.message}</ErrorMessage>
+                </InputGroup>
+
+                <InputGroup>
+                    <ContainerCheckbox>
+                        <input type="checkbox"  {...register("offer")} />
+                        <Label>Produto em Oferta?</Label>
+                    </ContainerCheckbox>
                 </InputGroup>
 
                 <SubmitButton>Adicionar Produto</SubmitButton>
