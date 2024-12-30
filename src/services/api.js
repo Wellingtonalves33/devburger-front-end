@@ -5,21 +5,23 @@ export const api = axios.create({
     headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
-    }
+    },
+    withCredentials: true // Adicionando esta configuração
 });
 
 api.interceptors.request.use((config) => {
     const userData = localStorage.getItem("devburger:userData");
     const token = userData && JSON.parse(userData).token;
-    
+
     if (token) {
         config.headers.authorization = `Bearer ${token}`;
     }
-    
+
+    // Adicionando headers CORS específicos
+    config.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
     return config;
 });
 
-// Adicionar interceptor de resposta para debug
 api.interceptors.response.use(
     response => response,
     error => {
