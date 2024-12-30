@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer,Link } from "./styles"
-import Logo from '../../assets/logo.svg'
+
 import { Button } from "../../components/Button"
 
 import { api } from "../../services/api";
@@ -62,7 +62,7 @@ export function Register() {
     return (
         <Container>
             <LeftContainer>
-                <img src={Logo} alt="Logo Devburger" />
+            <img src="/logo.svg" alt="logo" />
             </LeftContainer>
             <RightContainer>
                 <Title>
