@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import Logo from '../../assets/logo.svg'
+import Logo from "../../assets/logo-dev.svg"
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer,Link } from "./styles"
 
 import { Button } from "../../components/Button"

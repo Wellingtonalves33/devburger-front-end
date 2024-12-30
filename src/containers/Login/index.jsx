@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../hooks/UserContext";
 
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer,Link } from "./styles"
-import Logo from '../../assets/logo.svg'
+import Logo from "../../assets/logo-dev.svg"
 import {Button} from "../../components/Button"
 
 import { api } from "../../services/api";
