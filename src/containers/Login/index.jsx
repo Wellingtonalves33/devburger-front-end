@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../hooks/UserContext";
 
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer,Link } from "./styles"
-
+import Logo from '../../assets/logo.svg'
 import {Button} from "../../components/Button"
 
 import { api } from "../../services/api";
@@ -61,7 +61,7 @@ const { putUserData } = useUser();
     return (
         <Container>
             <LeftContainer>
-            <img src="/logo.svg" alt="logo" />
+            <img src={Logo} alt='logo'/>
             </LeftContainer>
             <RightContainer>
                 <Title>
