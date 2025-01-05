@@ -46,7 +46,7 @@ export function Header() {
                         <UserCircle size={24} color="#FFf" />
                         <div>
                             <p>
-                                Olá, <span>@{userInfo.name}</span>
+                                Olá, <span>{userInfo.name}</span>
                             </p>
                             <Logout onClick={logoutUser}>Sair</Logout>
                         </div>
@@ -63,7 +63,7 @@ export function Header() {
                 <MobileMenu>
                     <HeaderLink to="/" $isActive={pathname === "/"}>Home</HeaderLink>
                     <HeaderLink to="/cardapio" $isActive={pathname === "/cardapio"}>Cardápio</HeaderLink>
-                    <HeaderLink to="/carrinho">Carrinho</HeaderLink>
+                    <HeaderLink to="/carrinho" >Carrinho</HeaderLink>
                 </MobileMenu>
             )}
         </Container>
