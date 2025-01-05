@@ -7,6 +7,9 @@ import { AdminLayout } from "../layouts/AdminLayout";
 export function Router(){
     return(
         <Routes>
+
+
+            
             <Route path="/" element={<UserLayout/>}>  
 
             <Route path="/cardapio" element={<Menu/>}/>
@@ -35,24 +38,3 @@ export function Router(){
         </Routes>
     )
 }
-
-
-
-
-
-
-// 
-//     {
-//         path: "/checkout",
-//         element: <Checkout />,
-//     },
-//     {
-//         path: "/complete",
-//         element: <CompletePayment />,
-//     },
-    
-//     {
-//         path: "*",  // Isso captura todas as rotas não definidas
-//         element: <div>Página não encontrada</div>, // Você pode criar um componente próprio para erro 404
-//     }
-// ]);

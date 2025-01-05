@@ -99,7 +99,7 @@ export function Register() {
 
                 </Form>
 
-                <p>Já possui conta? <Link to="/login">Cadastre-se</Link> </p>
+                <p>Já possui conta? <Link to="/login">Login</Link> </p>
 
             </RightContainer>
         </Container>

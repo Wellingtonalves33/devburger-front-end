@@ -11,5 +11,8 @@ export const ContainerButton = styled.button`
 
  &:hover{
     background-color:${(props) => props.theme.secondDarkPurple} ;
+    &:active{
+    opacity: 0.8;
+}
  }
 `

@@ -3,110 +3,146 @@ import Fundo from "../../assets/fundo-login.svg";
 import FundoForm from "../../assets/fundo-form.svg";
 import { Link as ReactLink } from "react-router-dom";
 
-
 export const Container = styled.div`
- display: flex;
- height: 100vh;
- width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; // Previne scroll horizontal
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
-export const LeftContainer  = styled.div`
-background: url(${Fundo});
-background-size: cover;
-background-position: center;
 
-height: 100%;
-width: 100%;
-max-width: 50%;
+export const LeftContainer = styled.div`
+  background: url(${Fundo});
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 
-display:flex ;
-align-items: center;
-justify-content: center;
+  img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
+  }
 
-img{
-    width: 80%;
-}
+  @media (max-width: 1024px) {
+    width: 100%;
+    min-height: 300px;
+    padding: 40px;
+  }
+
+  @media (max-width: 768px) {
+display: none;
+
+  img {
+    width: 100px;
+   
+  }
+  }
 `;
 
 export const RightContainer = styled.div`
-background: url(${FundoForm});
-background-size: cover;
-background-position: center;
-background-color: #1e1e1e;
+  background: url(${FundoForm});
+  background-size: cover;
+  background-position: center;
+  background-color: #1e1e1e;
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
 
-
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-
-height: 100%;
-width: 100%;
-max-width: 50%;
-
-P{
+  p {
     color: ${(props) => props.theme.white};
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
-a{
-    text-decoration: underline;
-}
-}
+    margin-top: 20px;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    min-height: calc(100vh - 300px);
+  }
+
+  @media (max-width: 768px) {
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+  }
 `;
 
-export const Title = styled.h2 `
- font-family: "Road Rage", sans-serif;
- font-weight: 400;
- font-size: 40px;
- color: ${(props) => props.theme.white};
-
- span{
+export const Title = styled.h2`
+  font-family: "Road Rage", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: ${(props) => props.theme.white};
+  text-align: center;
+  margin-bottom: 30px;
+  
+  span {
     color: ${(props) => props.theme.purple};
     font-family: "Road Rage", sans-serif;
- }
+  }
 
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
-export const Form  = styled.form`
- display: flex;
- flex-direction: column;
- gap: 20px;
- padding: 20px;
- width: 100%;
- max-width: 400px;
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 `;
 
 export const InputContainer = styled.div`
-display: flex;
-flex-direction: column;
-gap: 5px;
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 
-input{
+  input {
     width: 100%;
     border: none;
     border-radius: 5px;
-    height: 52px;
-    padding: 0 10px;
-}
+    height: 45px;
+    padding: 0 15px;
+    font-size: 16px;
+  }
 
-label{
-    font-size: 18px;
+  label {
+    font-size: 16px;
     font-weight: 600;
     color: aliceblue;
-}
-p{
-   font-size:14px ;
-   line-height: 80%;
-   color: ${(props) => props.theme.darkRed};
-   font-weight: 600;
-   height: 10px;
-}
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1;
+    color: ${(props) => props.theme.darkRed};
+    font-weight: 600;
+    margin: 0;
+    min-height: 20px;
+  }
 `;
 
 export const Link = styled(ReactLink)`
-text-decoration: none;
-color: ${(props) => props.theme.white};
+  text-decoration: none;
+  color: ${(props) => props.theme.white};
 `;
- 
-
-
