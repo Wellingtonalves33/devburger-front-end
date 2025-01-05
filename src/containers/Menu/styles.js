@@ -75,7 +75,7 @@ export const Banner = styled.div`
 export const CategoryMenu = styled.div`
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 150px;
   margin-top: 30px;
   flex-wrap: wrap;
   padding: 0 20px;
@@ -136,9 +136,9 @@ export const ProductsContainer = styled.div`
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 75px;
     padding: 15px;
-    margin: 20px auto 0;
+    margin: 45px auto 0;
   }
 `
 
