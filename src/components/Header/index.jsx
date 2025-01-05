@@ -46,7 +46,7 @@ export function Header() {
                         <UserCircle size={24} color="#FFf" />
                         <div>
                             <p>
-                                Olá, <span>{userInfo.name}</span>
+                                Olá, <span>@{userInfo.name}</span>
                             </p>
                             <Logout onClick={logoutUser}>Sair</Logout>
                         </div>
