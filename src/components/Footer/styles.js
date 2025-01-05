@@ -13,4 +13,11 @@ p{
     font-size: 14px;
     font-weight: lighter;
 }
+@media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        text-align: center;
+    }
 `;
