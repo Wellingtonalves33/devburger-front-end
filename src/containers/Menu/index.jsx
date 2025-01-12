@@ -9,7 +9,7 @@ export function Menu() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  
+
   const navigate = useNavigate();
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
@@ -76,7 +76,7 @@ export function Menu() {
           <CategoryButton
             key={category.id}
             $isActiveCategory={category.id === activeCategory}
-            to={`/cardapio?categoria=${category.id}`}
+            to={`/user/cardapio?categoria=${category.id}`}
             onClick={(e) => {
               e.preventDefault();
               handleCategoryClick(category.id);

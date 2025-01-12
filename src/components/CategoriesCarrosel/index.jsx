@@ -46,7 +46,7 @@ export function CategoriesCarousel() {
                 {categories.map((category) => (
                     <ContainerItens key={category.id} imageUrl={category.url}>
                         <CategoryButton
-                            to={`/cardapio?categoria=${category.id}`}
+                            to={`/user/cardapio?categoria=${category.id}`} 
                         >
                             {category.name}
                         </CategoryButton>

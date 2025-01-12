@@ -27,28 +27,28 @@ const STATUS_CONTENT_MAP = {
         iconColor: "#30B130",
         icon: SuccessIcon,
         buttonText: "Voltar para Home",
-        url: "/",
+        url: "/user/home", 
     },
     processing: {
         text: "Pagamento em processamento.",
         iconColor: "#6D6E78",
         icon: InfoIcon,
         buttonText: "Voltar para Home",
-        url: "/",
+        url: "/user/home", 
     },
     requires_payment_method: {
         text: "Falha ao efetuar o pagamento, tente novamente.",
         iconColor: "#DF1B41",
         icon: ErrorIcon,
         buttonText: "Tentar novamente",
-        url: "/carrinho",
+        url: "/user/carrinho", 
     },
     default: {
         text: "Algo deu errado, tente novamente.",
         iconColor: "#DF1B41",
         icon: ErrorIcon,
         buttonText: "Tentar novamente",
-        url: "/carrinho",
+        url: "/user/carrinho", 
     }
 };
 

@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { 
-    Container, 
-    Content, 
-    Navigation, 
-    HeaderLink, 
-    Options, 
-    Profile, 
-    LinkContainer, 
+import {
+    Container,
+    Content,
+    Navigation,
+    HeaderLink,
+    Options,
+    Profile,
+    LinkContainer,
     Logout,
     MobileMenu,
-    MenuButton 
+    MenuButton
 } from "./styles";
 import { UserCircle, ShoppingCart, List } from "@phosphor-icons/react";
 import { useNavigate, useResolvedPath } from "react-router-dom";
@@ -23,7 +23,7 @@ export function Header() {
 
     function logoutUser(){
         logout();
-        navigate('/login');
+        navigate('/'); 
     }
 
     return (
@@ -35,9 +35,19 @@ export function Header() {
 
                 <Navigation>
                     <div>
-                        <HeaderLink to="/" $isActive={pathname === "/"}>Home</HeaderLink>
+                        <HeaderLink 
+                            to="/user/home" 
+                            $isActive={pathname === "/user/home"}
+                        >
+                            Home
+                        </HeaderLink>
                         <hr></hr>
-                        <HeaderLink to="/cardapio" $isActive={pathname === "/cardapio"}>Cardápio</HeaderLink>
+                        <HeaderLink 
+                            to="/user/cardapio" 
+                            $isActive={pathname === "/user/cardapio"}
+                        >
+                            Cardápio
+                        </HeaderLink>
                     </div>
                 </Navigation>
 
@@ -54,16 +64,30 @@ export function Header() {
 
                     <LinkContainer>
                         <ShoppingCart size={24} color="#FFf" />
-                        <HeaderLink to="/carrinho">Carrinho</HeaderLink>
+                        <HeaderLink to="/user/carrinho">Carrinho</HeaderLink>
                     </LinkContainer>
                 </Options>
             </Content>
-            
+
             {isMobileMenuOpen && (
                 <MobileMenu>
-                    <HeaderLink to="/" $isActive={pathname === "/"}>Home</HeaderLink>
-                    <HeaderLink to="/cardapio" $isActive={pathname === "/cardapio"}>Cardápio</HeaderLink>
-                    <HeaderLink to="/carrinho" >Carrinho</HeaderLink>
+                    <HeaderLink 
+                        to="/user/home" 
+                        $isActive={pathname === "/user/home"}
+                    >
+                        Home
+                    </HeaderLink>
+                    <HeaderLink 
+                        to="/user/cardapio" 
+                        $isActive={pathname === "/user/cardapio"}
+                    >
+                        Cardápio
+                    </HeaderLink>
+                    <HeaderLink 
+                        to="/user/carrinho"
+                    >
+                        Carrinho
+                    </HeaderLink>
                 </MobileMenu>
             )}
         </Container>

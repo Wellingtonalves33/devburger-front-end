@@ -7,13 +7,11 @@ import { api } from "../../services/api";
 import { FormatPrice } from "../../utils/formatPrice";
 import { useNavigate } from "react-router-dom";
 
-
 export function CartResume() {
     const [finalPrice, setFinalPrice] = useState(0);
     const [deliveryTax] = useState(500);
 
     const navigate = useNavigate()
-
     const { cartProducts } = useCart();
 
     useEffect(() => {
@@ -21,21 +19,21 @@ export function CartResume() {
             return current.price * current.quantity + acc;
         }, 0);
         setFinalPrice(sumAllItems)
-    }, [cartProducts]); 
+    }, [cartProducts]);
 
     const submitOrder = async () => {
         const products = cartProducts.map((product) => {
             return {
-                 id: product.id, 
-                 quantity: product.quantity,
+                id: product.id,
+                quantity: product.quantity,
                 price: product.price,
-                };
+            };
         });
 
-        try{
+        try {
             const { data } = await api.post('/create-payment-intent', { products });
 
-            navigate('/checkout', {
+            navigate('/user/checkout', { 
                 state: data,
             })
         // eslint-disable-next-line no-unused-vars
@@ -49,10 +47,8 @@ export function CartResume() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                
-                });
+            });
         }
-
     }
 
     return (

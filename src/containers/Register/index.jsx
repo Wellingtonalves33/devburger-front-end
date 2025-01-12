@@ -45,7 +45,7 @@ export function Register() {
            );
            if (status === 201 || status === 200) {
             setTimeout(() => {
-                navigate('/login');
+                navigate('/');
             },2000);
                toast.success('Cadastro realizado com sucesso');
            } else if(status === 400 || status === 409){
@@ -99,7 +99,7 @@ export function Register() {
 
                 </Form>
 
-                <p>Já possui conta? <Link to="/login">Login</Link> </p>
+                <p>Já possui conta? <Link to="/">Login</Link> </p>
 
             </RightContainer>
         </Container>

@@ -65,7 +65,7 @@ export function CheckoutForm() {
            if (status === 201 || status === 200) {
           
             setTimeout(() => {
-                navigate(`/complete?payment_intent_client_secret=${paymentIntent.client_secret}`);
+                navigate(`/user/complete?payment_intent_client_secret=${paymentIntent.client_secret}`);
                
             },2000);
             clearCart()
@@ -81,7 +81,7 @@ export function CheckoutForm() {
         } 
         }
         else{
-            navigate(`/complete?payment_intent_client_secret=${paymentIntent.client_secret}`);
+            navigate(`/user/complete?payment_intent_client_secret=${paymentIntent.client_secret}`);
         }
 
         setIsLoading(false);
