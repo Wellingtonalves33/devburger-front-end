@@ -73,12 +73,14 @@ export function CompletePayment() {
             return;
         }
 
+        console.log('Client Secret:', clientSecret);
         stripe.retrievePaymentIntent(clientSecret)
             .then(({ paymentIntent }) => {
                 if (!paymentIntent) {
                     setError("Payment intent não encontrado");
                     return;
                 }
+                console.log('Payment Status:', paymentIntent.status);
                 setStatus(paymentIntent.status);
                 setIntentId(paymentIntent.id);
             })
